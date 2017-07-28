@@ -67,7 +67,7 @@
 				class="navbar-form pull-left" style="margin-left: -15px;">
 				<div class="input-group" style="margin-top: 1px; height: 43px">
 					<input type="text" class="form-control" name="SearchKeyword"
-						id="searchAttribute" placeholder="Search here"
+						id="searchAttribute" placeholder="Search Entire store here"
 						style="width: 800px; height: 43px" />
 					<div class="input-group-btn">
 						<a href="#">
