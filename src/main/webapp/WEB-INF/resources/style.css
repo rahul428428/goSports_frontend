@@ -1,0 +1,27 @@
+@CHARSET "ISO-8859-1";
+
+
+li.dropdown:hover > .dropdown-menu 
+{
+    display: block;
+    
+  
+}
+
+
+.navbar .nav >li > a:hover
+{
+	 background-color : #6666ff;
+	   
+	  
+}
+
+.navbar .nav >li > ul > li   a:hover
+{  z
+	  background-color : #9999ff;
+	  text-color:red;
+}
+ 
+ 
+ 
+ 
