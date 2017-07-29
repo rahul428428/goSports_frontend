@@ -11,7 +11,7 @@
 <body>
 
 
-	<div class="container" style="width: 75%; margin-top: 80px">
+	<div class="container" style="width: 75%;">
 		<div class="panel panel-primary">
 			<div class="panel-heading" style="background-color: black">
 				<b><h2>Details About the Product</h2></b>
@@ -62,23 +62,24 @@
 				</table>
 				<br>
 				<c:url value="cartaddtocart${product.id}" var="cart"></c:url>
+				
 				<form action="${cart}">
 
-					Enter Units <input type="text" name="units"/> <br> <br>
+					Enter Units <input type="text" name="units" /> <br> <br>
 					<button type="submit" class="btn btn-default"
 						style="height: 45px; background-color: #fb641b; width: 190px">
 						<span class="glyphicon glyphicon-flash" style="color: white;">&nbsp</span><strong
 							style="color: white">ADD TO CART</strong>
 					</button>
-				</form>
-				&nbsp &nbsp &nbsp &nbsp
-				<button class="btn btn-default"
-					style="height: 45px; width: 190px; background-color: #ff9f00">
-					<span class="glyphicon glyphicon-shopping-cart"
-						style="color: white">&nbsp</span><strong style="color: white">
-						BUY NOW</strong>
-				</button>
 
+					&nbsp &nbsp &nbsp &nbsp
+					<button class="btn btn-default"
+						style="height: 45px; width: 190px; background-color: #ff9f00">
+						<span class="glyphicon glyphicon-shopping-cart"
+							style="color: white">&nbsp</span><strong style="color: white">
+							BUY NOW</strong>
+					</button>
+				</form>
 			</div>
 			<!-- End of panel-body -->
 		</div>

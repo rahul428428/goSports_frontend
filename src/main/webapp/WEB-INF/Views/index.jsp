@@ -11,7 +11,7 @@
  
      
 </head>
-<body>
+<body  >
  
 <jsp:include page="navbar.jsp"/>
 

@@ -12,8 +12,8 @@
 <body>
 
 	<div class="container" style="margin-top: 100px; width: 30%;">
-		<div class="panel  panel-info ">
-			<div class="panel-heading">
+		<div class="panel  panel-info">
+			<div class="panel-heading" >
 				<h4>Sign In</h4>
 			</div>
 			<!-- end of pannel heading -->

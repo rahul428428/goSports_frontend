@@ -63,6 +63,8 @@
 				style="width: 135px; margin-top: -13px;; margin-left: 130px">
 			</a>
 
+
+			<!-- SEARCH BAR -->
 			<form action="searchproduct" method="get"
 				class="navbar-form pull-left" style="margin-left: -15px;">
 				<div class="input-group" style="margin-top: 1px; height: 43px">
@@ -75,7 +77,7 @@
 								onclick="return Validate()" style="background-color: #ffe11b"
 								href="getallproducts">
 								<i class="glyphicon glyphicon-search"
-									style="height: 28.4px; width: 40px; padding-top: 7px"></i>
+									style="height: 28.4px; width: 49px; padding-top: 7px"></i>
 							</button>
 						</a>
 					</div>
@@ -84,8 +86,7 @@
 
 
 
-			<a href="getallproducts"><span class="btn btn-warning"
-				style="margin-top: 16px">ALL PRODUCTS</span></a>
+
 
 
 
@@ -97,7 +98,7 @@
 		style="background-color: #6666ff; border-radius: 2px 0 0 2px; margin-top: 60.213px">
 		<div class="container-fluid">
 
-			<ul class="nav navbar-nav" style="margin-left: 282px">
+			<ul class="nav navbar-nav" style="margin-left: 230px">
 
 
 				<li class="dropdown"><a class="dropdown-toggle"
@@ -175,6 +176,9 @@
 						<li><a href="searchbyCategory33">Badminton-court</a></li>
 					</ul></li>
 
+				<li><a href="getallproducts"><span style="margin-top: 16px">
+							<span style="color: white">ALL PRODUCTS</span></a></li>
+
 
 			</ul>
 
@@ -200,44 +204,47 @@
 
 				</c:if>
 
-				<li class="dropdown" style="margin-right:15px"><c:if
+				<li class="dropdown" style="margin-right: 10px"><c:if
 						test="${pageContext.request.userPrincipal.name!=null }">
-						<button class="btn btn-danger" href="#" class="dropdown-toggle" data-toggle="dropdown"><b
-							style="color: white;"> <span style="color: white"
-								class="glyphicon glyphicon-user"></span> &nbsp Welcome
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b
+							style="color: white;"> <i class="fa fa-user"
+								aria-hidden="true"></i> &nbsp Welcome
 								${pageContext.request.userPrincipal.name }
-						</b><b class="caret" style="color: white"></b></button>
+						</b><b class="caret" style="color: white"></b>
+						</a>
 					</c:if>
 					<ul class="dropdown-menu">
 						<li><security:authorize access="hasRole('ROLE_USER')">
-								<a href="#"> <span
-									class="glyphicon glyphicon-book" style=" font-size: 20px ;color:green"></span> &nbsp My Orders
+								<a href="#"> <span class="glyphicon glyphicon-book"
+									style="font-size: 20px; color: green"></span> &nbsp My Orders
 								</a>
 							</security:authorize></li>
 
 						<li><security:authorize access="hasRole('ROLE_USER')">
-								<a href="#"> <span
-									class="glyphicon glyphicon-heart-empty" style=" color:blue;font-size: 20px"></span> &nbsp Wishlist
+								<a href="#"> <span class="glyphicon glyphicon-heart-empty"
+									style="color: blue; font-size: 20px"></span> &nbsp Wishlist
 								</a>
 							</security:authorize></li>
 
 						<li><security:authorize access="hasRole('ROLE_USER')">
-								<a href="#"><span
-									class="glyphicon glyphicon-wrench" style=" font-size: 20px"></span> &nbsp Edit Profile</a>
+								<a href="#"><span class="glyphicon glyphicon-wrench"
+									style="font-size: 20px"></span> &nbsp Edit Profile</a>
 							</security:authorize></li>
 
 						<li><security:authorize access="hasRole('ROLE_USER')">
-								<a href="#"> <span
-									class="glyphicon glyphicon-shopping-cart" style="color:#ff9f00; font-size: 20px"></span> &nbsp
-									Shopping Cart
+								<c:url value="cartgetcart" var="cart"></c:url>
+								<a href="${cart}"> <span
+									class="glyphicon glyphicon-shopping-cart"
+									style="color: #ff9f00; font-size: 20px"></span> &nbsp Shopping
+									Cart
 								</a>
 							</security:authorize></li>
 
 						<li><security:authorize access="hasRole('ROLE_ADMIN')">
 								<a href="admin_getproductform"><span
 									style="margin-top: 16px"> <span
-										class="glyphicon glyphicon glyphicon-briefcase"  style="font-size: 20px"></span> &nbsp
-										Manage Products
+										class="glyphicon glyphicon glyphicon-briefcase"
+										style="font-size: 20px"></span> &nbsp Manage Products
 								</span></a>
 							</security:authorize></li>
 
@@ -245,7 +252,8 @@
 
 						<c:url value="/j_spring_security_logout" var="logoutUrl"></c:url>
 						<li><a href="${logoutUrl}"><span
-								class="glyphicon glyphicon-off"  style="color:red ;  font-size: 20px;"></span> &nbsp  Logout </a></li></li>
+								class="glyphicon glyphicon-off"
+								style="color: red; font-size: 20px;"></span> &nbsp Logout </a></li></li>
 
 			</ul>
 			</li> <br>

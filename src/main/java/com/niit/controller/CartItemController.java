@@ -98,20 +98,42 @@ public class CartItemController {
 	
 	
 	@RequestMapping("/cart_removecartitem{cartItemId}")
-	public String removeCartItem(@PathVariable int cartItemId )
+	public String removeCartItem(@PathVariable int cartItemId,Model model )
 	{
 		
 		 cartItemService.removeCartItem(cartItemId);
-		return " redirect:/cartgetcart";
-		
+
+			User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			
+			String username =  user.getUsername();
+		   
+			Customer customer = customerService.getCustomerByUsername(username);
+			
+			Cart cart = customer.getCart();
+			
+			model.addAttribute("cart",cart);
+			
+			return "cart";
+		 
 	}
 	
 	@RequestMapping("/cart_clearcart{cartId}")
-	public String removeAllCartItems(@PathVariable int cartId)
+	public String removeAllCartItems(@PathVariable int cartId,Model model)
 	{
 		
-	   cartItemService.removeAllCartItems(cartId);
-		return " redirect:/cartgetcart";
+		cartItemService.removeAllCartItems(cartId);
+
+		User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		
+		String username =  user.getUsername();
+	   
+		Customer customer = customerService.getCustomerByUsername(username);
+		
+		Cart cart = customer.getCart();
+		
+		model.addAttribute("cart",cart);
+		
+		return "cart";
 		
 	}
 	
