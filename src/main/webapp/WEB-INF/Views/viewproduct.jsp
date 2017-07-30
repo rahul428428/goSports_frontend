@@ -1,17 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ include file="navbar.jsp"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 
-<title>Insert here</title>
+<title>Product Details</title>
+<%@ include file="navbar.jsp"%>
+
+<script type="text/javascript">
+  function Validate(){
+	  
+	  var quantity = document.getElementById('qty').value;
+	  
+	  if(quantity=="")
+		  {
+		  alert("Please Enter units");
+		  return false;
+		  }
+	  if(quantity==0)
+		  {
+		  alert("Enter Atleast one unit");
+		  return false;
+		  }	 
+	  return true;
+  }
+ 
+</script>
+
+
 </head>
 <body>
 
 
-	<div class="container" style="width: 75%;">
+	<div class="container" style="width: 75%; margin-top: 80px">
 		<div class="panel panel-primary">
 			<div class="panel-heading" style="background-color: black">
 				<b><h2>Details About the Product</h2></b>
@@ -62,26 +85,31 @@
 				</table>
 				<br>
 				<c:url value="cartaddtocart${product.id}" var="cart"></c:url>
-				
 				<form action="${cart}">
 
-					Enter Units <input type="text" name="units" /> <br> <br>
-					<button type="submit" class="btn btn-default"
-						style="height: 45px; background-color: #fb641b; width: 190px">
-						<span class="glyphicon glyphicon-flash" style="color: white;">&nbsp</span><strong
+					<security:authorize access="hasRole('ROLE_USER')">
+
+						<b style="margin-left:638px" > Enter Units</b>
+						<input value=1 id="qty"  type="text" name="units" class="form-control"
+							style="width: 10% ; margin-left:638px" />
+					</security:authorize>
+					<br> <br>
+					<button type="submit" class="btn btn-default"  onclick="return Validate()"
+						style="height: 45px; background-color: #fb641b; width: 190px ;margin-top:-70px">
+						<span class="glyphicon glyphicon-shopping-cart" style="color: white;">&nbsp</span><strong
 							style="color: white">ADD TO CART</strong>
 					</button>
 
 					&nbsp &nbsp &nbsp &nbsp
 					<button class="btn btn-default"
-						style="height: 45px; width: 190px; background-color: #ff9f00">
-						<span class="glyphicon glyphicon-shopping-cart"
+						style="height: 45px; width: 190px; background-color: #ff9f00; margin-top:-70px">
+						<span class="glyphicon glyphicon-flash"
 							style="color: white">&nbsp</span><strong style="color: white">
 							BUY NOW</strong>
 					</button>
 				</form>
 			</div>
-			<!-- End of panel-body -->
+			<!--End of panel-body-->
 		</div>
 		<!-- End of panel -->
 	</div>

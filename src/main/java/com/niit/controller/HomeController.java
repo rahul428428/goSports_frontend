@@ -27,6 +27,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 	  return "login";
   }
   
+  @RequestMapping("/navigationbar")
+  public String navigationBar()
+  {
+	  return "responsivenavbar";
+  }
  
 
 

@@ -27,19 +27,19 @@
 					modelAttribute="product" enctype="multipart/form-data">
 					<form:hidden path="id" />
 					<h4>Enter Product Name</h4>
-					<form:input class="form-control" path="productname" />
+					<form:input class="form-control" path="productname" style="width:94%" />
 					<form:errors path="productname" cssStyle="color:red"></form:errors>
 					<br>
 					<h4>Enter Price</h4>
-					<form:input class="form-control" path="price" />
+					<form:input class="form-control" path="price" style="width:94%" />
 					<form:errors path="price" cssStyle="color:red"></form:errors>
 					<br>
 					<h4>Enter Quantity</h4>
-					<form:input class="form-control" path="quantity" />
+					<form:input class="form-control" path="quantity" style="width:94%" />
 					<form:errors path="quantity" cssStyle="color:red"></form:errors>
 					<br>
 					<h4>Enter Description</h4>
-					<form:textarea class="form-control" path="description" />
+					<form:textarea class="form-control" path="description"  style="width:94%"/>
 					<form:errors path="description" cssStyle="color:red"></form:errors>
 					<br>
 
@@ -51,7 +51,7 @@
 
 					<div class="form-group">
 						<b> Select Category</b>
-						<form:select path="category.id">
+						<form:select path="category.id" class="form-control" style="width:94%">
 							<c:forEach items="${categories}" var="c">
 								<form:option value="${c.id}">
 								${c.categoryname}  

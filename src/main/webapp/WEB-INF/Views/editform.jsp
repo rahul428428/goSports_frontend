@@ -62,7 +62,7 @@
 
 						<div class="form-group">
 							<b> Select Category</b>
-							<form:select path="category.id">
+							<form:select path="category.id" class="form-control" style="width:94%">
 								<c:forEach items="${categories}" var="c">
 									<form:option value="${c.id}">
 								${c.categoryname}  
