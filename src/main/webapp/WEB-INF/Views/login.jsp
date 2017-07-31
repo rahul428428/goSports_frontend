@@ -38,10 +38,10 @@
 
 					 
 					<div style="margin-top: 10px">
-						<button type="submit" class="btn btn-success">Login </button>
+						<button type="submit" class="btn btn-success" style="width:100%" >Login </button>
 						<!-- Button -->
 				</form>
-				<a href="#">Forgot password?</a>
+			<!-- 	<a href="forgotpasswordform">Forgot password?</a> -->
 				<!-- for forgot password  -->
 			</div>
 

@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <title>Registration page</title>
@@ -23,23 +24,20 @@
 
 <script type="text/javascript">
 	function copy() {
-
 		if (document.getElementById('Copyaddress').checked == true) {
+			document.getElementById('s1').value = document.getElementById('b1').value;
+			document.getElementById('s2').value = document.getElementById('b2').value;
+			document.getElementById('s3').value = document.getElementById('b3').value;
+			document.getElementById('s4').value = document.getElementById('b4').value;
+			document.getElementById('s5').value = document.getElementById('b5').value;
+			document.getElementById('s6').value = document.getElementById('b6').value;
 
-			 document.getElementById('s1').value = document.getElementById('b1').value;
-			 document.getElementById('s2').value = document.getElementById('b2').value;
-			 document.getElementById('s3').value = document.getElementById('b3').value;
-			 document.getElementById('s4').value = document.getElementById('b4').value;
-			 document.getElementById('s5').value = document.getElementById('b5').value;
-			 document.getElementById('s6').value = document.getElementById('b6').value;
-			
 		}
-
 	}
 </script>
 
 </head>
-<body >
+<body>
 
 	<div class="container">
 		<div class="panel panel-primary">
@@ -48,7 +46,7 @@
 			</div>
 			<!-- end of panel-heading -->
 
-			<div class="panel-body" style="padding-top: 40px; height: 100%;">
+			<div class="panel-body" style="padding-top: 40px;">
 
 				<form:form action="savecustomer" method="post"
 					modelAttribute="customer">
@@ -95,6 +93,15 @@
 						<br>
 						<form:input type="password" id="txtConfirmPassword"
 							path="user.password" class="form-control" />
+
+						<form:label path="securityquestion">Enter Security Question</form:label>
+						<form:input path="securityquestion" class="form-control" />
+						
+						<form:label path="answer">Security Answer</form:label>
+						<form:input path="answer" class="form-control" />
+						<form:errors path="answer" cssStyle="color:red"></form:errors>
+
+
 
 					</div>
 					<!-- End col-sm-4 -->
