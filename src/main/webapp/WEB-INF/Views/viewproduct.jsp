@@ -93,16 +93,16 @@
 						<input value=1 id="qty"  type="text" name="units" class="form-control"
 							style="width: 10% ; margin-left:638px" />
 					</security:authorize>
-					<br> <br>
+					<br> <br> <br>
 					<button type="submit" class="btn btn-default"  onclick="return Validate()"
-						style="height: 45px; background-color: #fb641b; width: 190px ;margin-top:-70px">
+						style="height: 45px; background-color: #fb641b; width: 190px ;margin-top:-50px ; margin-left:635px">
 						<span class="glyphicon glyphicon-shopping-cart" style="color: white;">&nbsp</span><strong
 							style="color: white">ADD TO CART</strong>
 					</button>
 
 					&nbsp &nbsp &nbsp &nbsp
 					<button class="btn btn-default"
-						style="height: 45px; width: 190px; background-color: #ff9f00; margin-top:-70px">
+						style="height: 45px; width: 190px; background-color: #ff9f00; margin-top:-56px ; margin-left:850px;">
 						<span class="glyphicon glyphicon-flash"
 							style="color: white">&nbsp</span><strong style="color: white">
 							BUY NOW</strong>

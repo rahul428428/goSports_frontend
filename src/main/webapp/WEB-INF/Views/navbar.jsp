@@ -144,7 +144,7 @@
 							ACCESSORIES</span><span style="color: white" class="caret"></span> </a>
 					<ul class="dropdown-menu">
 						<li><a href="searchbyCategory18">Gym Gloves</a></li>
-						<li><a href="searchbyCategory19">Dumbell Racks</a></li>
+						<li><a href="searchbyCategory19">Trademill</a></li>
 						<li><a href="searchbyCategory20">Belts</a></li>
 						<li><a href="searchbyCategory21">Weight Plates</a></li>
 						<li><a href="searchbyCategory22">Weight Rods</a></li>

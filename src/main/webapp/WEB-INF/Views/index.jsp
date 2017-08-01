@@ -4,16 +4,14 @@
   <title>goSports.com</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
    
  
      
 </head>
 <body  >
  
-<jsp:include page="navbar.jsp"/>
+<%@ include file="navbar.jsp" %>
 
 <div class="container" >
   <div id="myCarousel" class="carousel slide" data-ride="carousel" >
@@ -61,9 +59,22 @@
       <span class="sr-only">Next</span>
     </a>
  </div>
-</div>
-
+ 
   
+ 
+</div>
+ <div class="container" style="margin-top:20px"> 
+    <a href="searchbyCategory1">  <img src="resources/running_shoes_0.jpg"   alt="running shoes"  style="width:30%; height:295px"> </a>
+    <a href="searchbyCategory3"> <img src="resources/adidasfootbalsoesadd.jpg"   alt="running shoes"  style="width:30%; height:295px ; margin-left:50px"> </a>
+    <a href="searchbyCategory3"> <img src="resources/nikefootads.jpg"   alt="running shoes"  style="width:30%;height:295px ; margin-left:55px"></a>
+    <a href="searchbyCategory9">  <img src="resources/BadmintonBanner.jpg"   alt="running shoes"  style="width:30%;height:295px ; margin-top:20px"></a>
+    <a href="searchbyCategory9"> <img src="resources/tennisad.jpg"   alt="running shoes"  style="width:30%; height:295px ; margin-left:50px ;margin-top:20px"> </a>
+    <a href="searchbyCategory10"> <img src="resources/boxing ad.jpg"   alt="running shoes"  style="width:30%; height:295px ; margin-left:50px ;margin-top:20px"> </a>
+    <img src="resources/nikatracksuits.jpg"   alt="running shoes"  style=" margin-top:20px">
+    <a href="searchbyCategory13" > <img src="resources/cricket_upto_40.jpg"   alt="running shoes"  style=" margin-top:20px ; margin-left:100px"> </a>
+    <a href="searchbyCategory12"> <img src="resources/bb_stand_50.jpg"   alt="running shoes"  style=" margin-top:20px ;width:30%; width: 300px"> </a>
+    <a href="viewproduct261" ><img src="resources/kamachi_treadmill_new.jpg"   alt="running shoes"  style=" margin-top:20px"></a>
+  </div>
   
 </body>
 </html>

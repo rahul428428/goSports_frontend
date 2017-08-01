@@ -43,7 +43,7 @@
 
 			<div class="panel-heading">
 				<h3>
-					<b> SECURITY QUESTION</b>
+					<b> CHANGE PASSWORD</b>
 				</h3>
 			</div>
 			<!-- End panel-heading -->
@@ -53,19 +53,17 @@
 				<form:form action="updatepassword" modelAttribute="customer"
 					style="margin-top: 30px">
 
+
+
+
+
+					<label><h3>Enter username again</h3></label>
+					<input type="text" name="username" class="form-control">
+					<p style="color: red">${uname}</p>
+
 					<h4>
 						<b style="color: black"> Your Security Question </b>
 					</h4>
-
-
-
-					<label><h3>Enter username</h3></label>
-					<input type="text" name="username" class="form-control">
-					<p style="color: red">${uname}</p>
-					<input type="submit" class="btn btn-primary"
-						style="margin-top: 60px; margin-left: 250px; width: 25%; margin-bottom: 40px">
-
-
 					<form:input path="securityquestion" style="font-size:20px;"
 						readonly="true" class="form-control" />
 					<br>
@@ -89,9 +87,8 @@
 					<input type="password" id="txtConfirmPassword" class="form-control" />
 					<button onclick="return Validate()" type="submit"
 						class="btn btn-primary"
-						; style="margin-top: 60px; margin-left: 250px; width: 25%; margin-bottom: 40px">UPDATE
+						; style="margin-top: 30px; margin-left: 250px; width: 25%; margin-bottom: 10px">UPDATE
 						PASSWORD</button>
-
 
 				</form:form>
 			</div>

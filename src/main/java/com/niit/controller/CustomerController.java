@@ -64,30 +64,45 @@ public class CustomerController {
 
 	}
 
-	/*@RequestMapping("/securityquestionform")
-	public String securityQuestion(@RequestParam String username,@RequestParam String securityanswer, @RequestParam String pswd,Model model) {
+	@RequestMapping("/securityquestionform")
+	public String securityQuestion(@RequestParam String username, Model model) {
 		Customer customer = customerService.getCustomerByUsername(username);
-		
+
 		if (customer == null) {
 
 			model.addAttribute("uname", "User does not Exist");
 
+			return "forgotpassword";
+
+		}
+
+		model.addAttribute("customer", customer);
+		return "securityquestionanswer";
+
+	}
+
+	@RequestMapping("/updatepassword")
+	public String updatePassword(@RequestParam String username, @RequestParam String securityanswer,
+			@RequestParam String pswd, Model model, @ModelAttribute(name = "customer") Customer customer) {
+
+		Customer customer1 = customerService.getCustomerByAnswer(securityanswer);
+		Customer customer2 = customerService.getCustomerByUsername(username);
+		
+		if(customer2== null)
+		{
+			model.addAttribute("uname", "User does not Exist");
+			return "securityquestionanswer";
+		}
+
+		if (customer1 == null) {
+			model.addAttribute("useranswer", "Security answer does not match !!");
 			return "securityquestionanswer";
 
 		}
 		
-		Customer customer1 = customerService.getCustomerByAnswer(securityanswer);
-		
-		if (customer1 == null) {
-			model.addAttribute("useranswer", "Security answer does not match");
-			return "securityquestionanswer";
-		}*/
-
-		
-		 
+		customerService.updateUser(pswd, username);
+		return "login" ;
 
 	}
 
-	 
-
- 
+}
