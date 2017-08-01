@@ -10,23 +10,20 @@
 <%@ include file="navbar.jsp"%>
 
 <script type="text/javascript">
-  function Validate(){
-	  
-	  var quantity = document.getElementById('qty').value;
-	  
-	  if(quantity=="")
-		  {
-		  alert("Please Enter units");
-		  return false;
-		  }
-	  if(quantity==0)
-		  {
-		  alert("Enter Atleast one unit");
-		  return false;
-		  }	 
-	  return true;
-  }
- 
+	function Validate() {
+
+		var quantity = document.getElementById('qty').value;
+
+		if (quantity == "") {
+			alert("Please Enter units");
+			return false;
+		}
+		if (quantity == 0) {
+			alert("Enter Atleast one unit");
+			return false;
+		}
+		return true;
+	}
 </script>
 
 
@@ -89,24 +86,29 @@
 
 					<security:authorize access="hasRole('ROLE_USER')">
 
-						<b style="margin-left:638px" > Enter Units</b>
-						<input value=1 id="qty"  type="text" name="units" class="form-control"
-							style="width: 10% ; margin-left:638px" />
+						<b style="margin-left: 638px"> Enter Units</b>
+						<input value=1 id="qty" type="text" name="units"
+							class="form-control" style="width: 10%; margin-left: 638px" />
 					</security:authorize>
-					<br> <br> <br>
-					<button type="submit" class="btn btn-default"  onclick="return Validate()"
-						style="height: 45px; background-color: #fb641b; width: 190px ;margin-top:-50px ; margin-left:635px">
-						<span class="glyphicon glyphicon-shopping-cart" style="color: white;">&nbsp</span><strong
-							style="color: white">ADD TO CART</strong>
+					<br>
+					<c:if test="${product.quantity==0 }">
+                       <span style="color:red ; font-size:22px">Out Of Stock </span>
+                     </c:if>
+					<br> <br>
+					<button type="submit" class="btn btn-default"
+						onclick="return Validate()"
+						style="height: 45px; background-color: #fb641b; width: 190px; margin-top: -50px; margin-left: 635px">
+						<span class="glyphicon glyphicon-shopping-cart"
+							style="color: white;">&nbsp</span><strong style="color: white">ADD
+							TO CART</strong>
 					</button>
 
 					&nbsp &nbsp &nbsp &nbsp
-					<button class="btn btn-default"
-						style="height: 45px; width: 190px; background-color: #ff9f00; margin-top:-56px ; margin-left:850px;">
-						<span class="glyphicon glyphicon-flash"
-							style="color: white">&nbsp</span><strong style="color: white">
-							BUY NOW</strong>
-					</button>
+					<!-- <button class="btn btn-default"
+						style="height: 45px; width: 190px; background-color: #ff9f00; margin-top: -56px; margin-left: 850px;">
+						<span class="glyphicon glyphicon-flash" style="color: white">&nbsp</span><strong
+							style="color: white"> BUY NOW</strong>
+					</button> -->
 				</form>
 			</div>
 			<!--End of panel-body-->

@@ -62,9 +62,10 @@
 														style="font-size: 15px"> ${cartItem.totalPrice} </b>
 												</h4></td>
 											<td><c:url
-													value="cart_removecartitem${cartItem.cartItemId}" var="removeitem" ></c:url>
-												<a class="btn btn-danger"
-												style="background-color: red; margin-top: 16px" href="${removeitem}">Remove</a></td>
+													value="cart_removecartitem${cartItem.cartItemId}"
+													var="removeitem"></c:url> <a class="btn btn-danger"
+												style="background-color: red; margin-top: 16px"
+												href="${removeitem}">Remove</a></td>
 										</tr>
 
 										<c:set var="grandTotal"
@@ -134,7 +135,12 @@
 
 					</div>
 					<!-- End panel -->
-					<a href="cart_clearcart${cart.id}" class="btn btn-danger"
+					<c:url value="cartshippingaddressform${cart.id}" var="checkoutrurl"></c:url>
+					<a href="${checkoutrurl}" class="btn btn-success"
+						style="width: 90%; margin-left: -48px"> <span
+						class="glyphicon glypicon-shopping-cart"></span> Check Out
+					</a> <br> <br>
+					<br> <a href="cart_clearcart${cart.id}" class="btn btn-danger"
 						style="width: 90%; margin-left: -48px">CLEAR CART</a>
 
 				</div>
