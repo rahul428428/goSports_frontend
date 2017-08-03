@@ -91,7 +91,12 @@
 										style="font-weight: 600; font-size: 10px color: black;">CONTINUE
 										SHOPPING </span>
 								</div>
-							</a> <a href="" class="btn btn-default"
+
+							</a>
+							<c:url value="cartshippingaddressform${cart.id}"
+								var="checkoutrurl"></c:url>
+							<a href="cartshippingaddressform${cart.id}"
+								class="btn btn-default"
 								style="height: 50px; width: 30%; margin-left: 380px; background-color: #fb641b; font-size: 18px;">
 								<div style="margin-top: 8px">
 									</span> <span style="font-weight: 600; font-size: 15px; color: white;">PLACE
@@ -119,29 +124,42 @@
 							Total Items <span style="margin-left: 190px">${totalitems}</span>
 						</h4>
 						<span style="font-size: 16px; margin-left: 14px"> Delivery
-							Charges </span><span
-							style="margin-left: 122px; font-size: 14px; color: #388e3c">
-							FREE</span>
+							Charges </span>
 
+						<c:if test="${grandTotal>=1500}">
+							<span style="margin-left: 122px; font-size: 14px; color: #388e3c">
+								FREE</span>
+						</c:if>
+
+						<c:if test="${grandTotal<1500}">
+							<span style="margin-left: 122px; font-size: 14px; color: #388e3c">
+								<i class="fa fa-inr" style="font-size: 15px;"></i> 100
+							</span>
+						</c:if>
 
 						<hr
 							style="border-top: 1px dashed #8c8b8b; color: grey; width: 90%">
+
 						<span style="font-size: 16px; margin-left: 14px"> <strong>Amount
 								Payable</strong> <span style="margin-left: 85px"><i
-								class="fa fa-inr" style="font-size: 15px;"></i> <strong>${grandTotal}</strong>
+								class="fa fa-inr" style="font-size: 15px;"></i> <strong>
+								
+								<c:if test="${grandTotal>=1500}">
+								${grandTotal}
+								</c:if>
+								
+								<c:if test="${grandTotal<1500}">
+								  ${grandTotal+100}
+								</c:if>
+								
+								</strong>
 						</span>
 						</span>
-
-
 					</div>
 					<!-- End panel -->
-					<c:url value="cartshippingaddressform${cart.id}" var="checkoutrurl"></c:url>
-					<a href="${checkoutrurl}" class="btn btn-success"
-						style="width: 90%; margin-left: -48px"> <span
-						class="glyphicon glypicon-shopping-cart"></span> Check Out
-					</a> <br> <br>
-					<br> <a href="cart_clearcart${cart.id}" class="btn btn-danger"
-						style="width: 90%; margin-left: -48px">CLEAR CART</a>
+					  <a href="cart_clearcart${cart.id}"
+						class="btn btn-danger" style="width: 90%; margin-left: -48px">CLEAR
+						CART</a>
 
 				</div>
 				<!-- End col-sm-3 -->
