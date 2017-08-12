@@ -60,7 +60,7 @@
 					<form:errors path="zipcode" cssStyle="color:red"></form:errors>
 				</div>
 				<div class="form-group">
-					<input type="submit" value="Next" class="btn btn-primary" style="width:200px" >
+					<input type="submit" value="CONTINUE" class="btn btn-primary" style="width:200px;margin-left:130px" >
 				</div>
 			</div>
 		</div>

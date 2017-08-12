@@ -22,13 +22,13 @@
 		<div class="container">
 			<div class="page-header">
 				<h1><b> Order Confirmation  </b></h1>
-
-				 
+              
+             
 			</div>
 
 			<div class="container" >
 				<c:url value="cartconfirm${cartid}" var="url"></c:url>
-				<form:form action="${url}" modelAttribute="order">
+				<form:form action="${url}" modelAttribute="order" >
 					<div class="row">
 
 						<div
@@ -112,7 +112,7 @@
 
 									</tbody>
 								</table>
-								<input type="submit" value="submit" class="btn  btn-success">
+								<input type="submit" value="PROCEED" class="btn  btn-success" style="margin-left:190px;width:30%" >
 							</div>
 
 

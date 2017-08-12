@@ -22,7 +22,8 @@
 
 			<div class="row">
 				<div class="col-sm-9">
-					<div class="panel" style="width: 85%; margin-left: 130px">
+					<div class="panel"
+						style="width: 85%; margin-left: 130px; border-radius: 0px 0 0 0px;">
 						<div class="panel panel-heading">
 							<h2>
 								<b>Shopping Cart</b>
@@ -111,7 +112,8 @@
 				<!-- End  col-sm-12 -->
 
 				<div class="col-sm-3">
-					<div class="panel" style="margin-left: -50px; width: 90%">
+					<div class="panel"
+						style="margin-left: -50px; width: 90%; border-radius: 0px 0 0 0px">
 						<div class="panel-heading">
 							<h5 style="color: grey">PRICE DETAILS</h5>
 						</div>
@@ -137,29 +139,29 @@
 							</span>
 						</c:if>
 
+						<h4 style="font-size: 16px; margin-left: 14px">
+							Price(${totalitems} item) <span style="margin-left: 140px">${grandTotal}</span>
+						</h4>
+
 						<hr
 							style="border-top: 1px dashed #8c8b8b; color: grey; width: 90%">
 
 						<span style="font-size: 16px; margin-left: 14px"> <strong>Amount
-								Payable</strong> <span style="margin-left: 85px"><i
+								Payable</strong> <span style="margin-left: 92px"><i
 								class="fa fa-inr" style="font-size: 15px;"></i> <strong>
-								
-								<c:if test="${grandTotal>=1500}">
+
+									<c:if test="${grandTotal>=1500}">
 								${grandTotal}
-								</c:if>
-								
-								<c:if test="${grandTotal<1500}">
+								</c:if> <c:if test="${grandTotal<1500}">
 								  ${grandTotal+100}
 								</c:if>
-								
-								</strong>
-						</span>
+
+							</strong> </span>
 						</span>
 					</div>
 					<!-- End panel -->
-					  <a href="cart_clearcart${cart.id}"
-						class="btn btn-danger" style="width: 90%; margin-left: -48px">CLEAR
-						CART</a>
+					<a href="cart_clearcart${cart.id}" class="btn btn-danger"
+						style="width: 90%; margin-left: -48px">CLEAR CART</a>
 
 				</div>
 				<!-- End col-sm-3 -->
@@ -169,7 +171,7 @@
 		<c:if test="${totalitems==null}">
 
 			<div class="container">
-				<div class="panel">
+				<div class="panel" style="border-radius: 0px 0 0 0px">
 					<div class="panel panel-heading">
 						<h2>
 							<b>Shopping Cart</b>

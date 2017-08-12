@@ -57,11 +57,11 @@
 						<br> <br>
 						<form:label path="firstname">First Name</form:label>
 						<br>
-						<form:input path="firstname" class="form-control" />
+						<form:input pattern="[A-Za-z]{5,}" path="firstname" class="form-control" />
 						<form:errors path="firstname" cssStyle="color:red"></form:errors>
 						<br>
 
-						<form:label path="lastname">Last Name</form:label>
+						<form:label pattern="[A-Za-z]{5,}" path="lastname">Last Name</form:label>
 						<br>
 						<form:input path="lastname" class="form-control" />
 						<form:errors path="lastname" cssStyle="color:red"></form:errors>
@@ -75,7 +75,8 @@
 						<br>
 						<form:label path="phone">Mobile number</form:label>
 						<br>
-						<form:input path="phone" class="form-control" />
+						<form:input  type="number" path="phone"
+							class="form-control" />
 						<form:errors path="phone" cssStyle="color:red"></form:errors>
 						<br>
 
@@ -85,7 +86,9 @@
 						<form:errors path="user.username" cssStyle="color:red"></form:errors>
 						<p style="color: red">${duplicateUser}</p>
 						<br> <label>Password</label> <br> <input type="password"
-							id="txtPassword" class="form-control" />
+							id="txtPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+							title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+							class="form-control" />
 						<form:errors path="user.password" cssStyle="color:red"></form:errors>
 						<br>
 
@@ -96,7 +99,7 @@
 
 						<form:label path="securityquestion">Enter Security Question</form:label>
 						<form:input path="securityquestion" class="form-control" />
-						
+
 						<form:label path="answer">Security Answer</form:label>
 						<form:input path="answer" class="form-control" />
 						<form:errors path="answer" cssStyle="color:red"></form:errors>
@@ -120,8 +123,8 @@
 
 						<form:label path="billingAddress.apartmentnumber">Apartment Number</form:label>
 						<br>
-						<form:input id="b2" path="billingAddress.apartmentnumber"
-							class="form-control" />
+						<form:input type="number" id="b2"
+							path="billingAddress.apartmentnumber" class="form-control" />
 						<form:errors path="billingAddress.apartmentnumber"
 							cssStyle="color:red"></form:errors>
 						<br>
@@ -149,8 +152,8 @@
 
 						<form:label path="billingAddress.zipcode">Zipcode</form:label>
 						<br>
-						<form:input id="b6" path="billingAddress.zipcode"
-							class="form-control" />
+						<form:input type="number" min="1" max="6" id="b6"
+							path="billingAddress.zipcode" class="form-control" />
 						<form:errors path="billingAddress.zipcode" cssStyle="color:red"></form:errors>
 						<br>
 					</div>
@@ -171,8 +174,8 @@
 
 						<form:label path="shippingAddress.apartmentnumber">Apartment Number</form:label>
 						<br>
-						<form:input id="s2" path="shippingAddress.apartmentnumber"
-							class="form-control" />
+						<form:input type="number" id="s2"
+							path="shippingAddress.apartmentnumber" class="form-control" />
 						<form:errors path="shippingAddress.apartmentnumber"
 							cssStyle="color:red"></form:errors>
 						<br>
@@ -201,8 +204,8 @@
 
 						<form:label path="shippingAddress.zipcode">Zipcode</form:label>
 						<br>
-						<form:input id="s6" path="shippingAddress.zipcode"
-							class="form-control" />
+						<form:input type="number" min="1" max="6" id="s6"
+							path="shippingAddress.zipcode" class="form-control" />
 						<form:errors path="shippingAddress.zipcode" cssStyle="color:red"></form:errors>
 						<br>
 					</div>
@@ -218,7 +221,7 @@
 					<br>
 					<input type="submit" value="Sign-Up" onclick="return Validate()"
 						class="btn btn-danger"
-						style="margin-left: 420px; margin-top: 30px" />
+						style="margin-left: 420px; margin-top: -30px; width: 400px" />
 
 				</form:form>
 

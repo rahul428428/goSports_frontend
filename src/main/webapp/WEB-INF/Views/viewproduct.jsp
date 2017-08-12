@@ -13,6 +13,8 @@
 	function Validate() {
 
 		var quantity = document.getElementById('qty').value;
+	
+		 
 
 		if (quantity == "") {
 			alert("Please Enter units");
@@ -22,7 +24,16 @@
 			alert("Enter Atleast one unit");
 			return false;
 		}
+		
+
+		if(quantity >${product.quantity}) {
+            alert("Entered units not available or Item is Out Of Stock"); 
+            return false;
+			
+		}
+		
 		return true;
+
 	}
 </script>
 
@@ -70,31 +81,28 @@
 					</tr>
 					<!-- End of third row -->
 
-
 					<tr>
 						<td><strong>Description</strong></td>
 						<td>${product.description}</td>
 					</tr>
 					<!-- end of  fourth row -->
 
-
-
 				</table>
 				<br>
+				<c:if test="${product.quantity==0 }">
+					<span style="color: red; font-size: 28px; margin-left: 50px">Out
+						Of Stock </span>
+				</c:if>
 				<c:url value="cartaddtocart${product.id}" var="cart"></c:url>
 				<form action="${cart}">
 
 					<security:authorize access="hasRole('ROLE_USER')">
 
 						<b style="margin-left: 638px"> Enter Units</b>
-						<input value=1 id="qty" type="text" name="units"
+						<input min="1" max="${product.quantity}" type="number" value=1 id="qty" type="text" name="units"
 							class="form-control" style="width: 10%; margin-left: 638px" />
-					</security:authorize>
-					<br>
-					<c:if test="${product.quantity==0 }">
-                       <span style="color:red ; font-size:22px">Out Of Stock </span>
-                     </c:if>
-					<br> <br>
+					
+					<br> <br> <br>
 					<button type="submit" class="btn btn-default"
 						onclick="return Validate()"
 						style="height: 45px; background-color: #fb641b; width: 190px; margin-top: -50px; margin-left: 635px">
@@ -102,8 +110,12 @@
 							style="color: white;">&nbsp</span><strong style="color: white">ADD
 							TO CART</strong>
 					</button>
-
-					&nbsp &nbsp &nbsp &nbsp
+					</security:authorize>
+					<br> <br> <span
+						style="color: green; margin-left: 640px; font-size: 18px">Free
+						Delivery on orders greater than <i class="fa fa-inr"
+						style="font-size: 15px;"></i> 1500.
+					</span> &nbsp &nbsp &nbsp &nbsp
 					<!-- <button class="btn btn-default"
 						style="height: 45px; width: 190px; background-color: #ff9f00; margin-top: -56px; margin-left: 850px;">
 						<span class="glyphicon glyphicon-flash" style="color: white">&nbsp</span><strong

@@ -8,6 +8,26 @@
 <head>
 <meta charset="utf-8">
 
+<script type="text/javascript">
+ function Confirmation(){
+	 var prdtname = document.getElementById('pname').value;
+	 var rate = document.getElementById('price').value;
+	 
+	 var qty  = document.getElementById('quantity').value;
+	 var description = document.getElementById('desc').value;
+	 
+ if(prdtname!="" && rate!="" && qty!="" && description!="")
+	 {
+	  alert("Product  has been added successfully");
+	  return true;
+	 }
+	
+ return true;
+	 
+ }
+</script>
+ 
+
 </head>
 <body>
 
@@ -27,24 +47,24 @@
 					modelAttribute="product" enctype="multipart/form-data">
 					<form:hidden path="id" />
 					<h4>Enter Product Name</h4>
-					<form:input class="form-control" path="productname" style="width:94%" />
+					<form:input id="pname" class="form-control" path="productname" style="width:94%" />
 					<form:errors path="productname" cssStyle="color:red"></form:errors>
 					<br>
 					<h4>Enter Price</h4>
-					<form:input class="form-control" path="price" style="width:94%" />
+					<form:input type="number" id="price" class="form-control" path="price" style="width:94%" />
 					<form:errors path="price" cssStyle="color:red"></form:errors>
 					<br>
 					<h4>Enter Quantity</h4>
-					<form:input class="form-control" path="quantity" style="width:94%" />
+					<form:input type="number" id="quantity" class="form-control" path="quantity" style="width:94%" />
 					<form:errors path="quantity" cssStyle="color:red"></form:errors>
 					<br>
 					<h4>Enter Description</h4>
-					<form:textarea class="form-control" path="description"  style="width:94%"/>
+					<form:textarea id="desc" class="form-control" path="description"  style="width:94%"/>
 					<form:errors path="description" cssStyle="color:red"></form:errors>
 					<br>
 
 					<div class="form-group">
-						Upload an image <input type="file" name="image" />
+						Upload an image <input  type="file" name="image" />
 					</div>
 
 
@@ -61,7 +81,7 @@
 						</form:select>
 					</div>
 
-					<input type="submit" class="btn btn-success" value="ADD PRODUCT" />
+					<input type="submit"   onclick="return Confirmation()" class="btn btn-success" value="ADD PRODUCT" />
 				</form:form>
 			</div>
 		</div>

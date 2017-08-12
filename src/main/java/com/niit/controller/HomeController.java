@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
    {
 		
 	 return "registration";
+	 
    }
   
   

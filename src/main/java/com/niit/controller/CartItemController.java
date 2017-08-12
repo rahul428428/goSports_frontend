@@ -50,6 +50,7 @@ public class CartItemController {
 		Cart cart = customer.getCart();
 		
 		List<CartItem>  cartItems = cart.getCartItems();
+		
 		System.out.println(cart.getCartItems().size());
 		
 		//check If purchased product is already existing in the cartitem  table; 
@@ -61,8 +62,11 @@ public class CartItemController {
 				//product id in table (productid in database) == id(input)
 				 
 				cartItem.setQuantity(units);
+				
 				cartItem.setTotalPrice(product.getPrice()*units);
-				cartItemService.addCartItem(cartItem); // update cartitem units & totalprice;				 
+				
+				cartItemService.addCartItem(cartItem); // update cartitem units & totalprice;		
+				
 				return "redirect:/cartgetcart";
 			}
 				
@@ -90,6 +94,8 @@ public class CartItemController {
 		Customer customer = customerService.getCustomerByUsername(username);
 		
 		Cart cart = customer.getCart();
+		
+		
 		
 		model.addAttribute("cart",cart);
 		

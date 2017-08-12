@@ -39,14 +39,14 @@
 					<br>
 					<label> Price :</label>
 					<br>
-					<form:input path="price" style="width:94%" class="form-control" />
+					<form:input type="number" path="price" style="width:94%" class="form-control" />
 					<br>
 					<form:errors path="price" cssStyle="color:red"></form:errors>
 					<br>
 
 					<label>Quantity :</label>
 					<br>
-					<form:input path="quantity" style="width:94%" class="form-control" />
+					<form:input type="number"  path="quantity" style="width:94%" class="form-control" />
 					<br>
 					<form:errors path="quantity" cssStyle="color:red"></form:errors>
 					<br>

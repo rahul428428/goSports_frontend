@@ -43,7 +43,7 @@ public class CustomerController {
 		String email = customer.getEmail();
 		Customer customer1 = customerService.validateCustomer(email);
 		if (customer1 != null || user != null) {
-			model.addAttribute("duplicateUser", "Username already Exist");
+			model.addAttribute("duplicateUser", "Username already Taken");
 			model.addAttribute("duplicateEmail", "Email address already exist");
 			return "registration";
 		}
@@ -52,10 +52,6 @@ public class CustomerController {
 		return "login";
 	}
 
-	@RequestMapping("/editprofile")
-	public String editProfile() {
-		return "editprofile";
-	}
 
 	@RequestMapping("/forgotpasswordform")
 	public String forgotPassword() {
@@ -100,7 +96,9 @@ public class CustomerController {
 
 		}
 		
-		customerService.updateUser(pswd, username);
+		 User user = customer2.getUser();
+		 user.setPassword(pswd);
+		customerService.updateUser(user);
 		return "login" ;
 
 	}

@@ -215,7 +215,7 @@
 						</a>
 					</c:if>
 					<ul class="dropdown-menu">
-						<li><security:authorize access="hasRole('ROLE_USER')">
+						<%-- <li><security:authorize access="hasRole('ROLE_USER')">
 								<a href="#"> <span class="glyphicon glyphicon-book"
 									style="font-size: 20px; color: green"></span> &nbsp My Orders
 								</a>
@@ -226,9 +226,9 @@
 									style="color: blue; font-size: 20px"></span> &nbsp Wishlist
 								</a>
 							</security:authorize></li>
-
+ --%>
 						<li><security:authorize access="hasRole('ROLE_USER')">
-								<a href="#"><span class="glyphicon glyphicon-wrench"
+								<a href="editprofile"><span class="glyphicon glyphicon-wrench"
 									style="font-size: 20px"></span> &nbsp Edit Profile</a>
 							</security:authorize></li>
 
